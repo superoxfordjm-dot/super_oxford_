@@ -23,13 +23,13 @@
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 // STEP: Replace these two placeholders with your Supabase Project URL and Publishable Key.
-const SUPABASE_URL = 'https://jlzidyrenpoprbhpvhns.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_rNvE3l3sQzgHd_x4RxjMFA_2DYleZ6l';
+const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_PUBLISHABLE_KEY = 'PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE';
 const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
 const supabase = configured ? createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY) : null;
 const modules = {
  dashboard:{title:'Dashboard',table:null},
- students:{title:'Students',table:'students',fields:[['admission_no','Admission No','text',true],['full_name','Student Name','text',true],['father_name','Father Name'],['mobile','Mobile'],['email','Email','email'],['course_id','Course ID'],['admission_date','Admission Date','date'],['status','Status','select','false',['Active','Inactive','Completed','LEFT']],cols:['admission_no','full_name','father_name','mobile','status']},
+ students:{title:'Students',table:'students',fields:[['admission_no','Admission No','text',true],['full_name','Student Name','text',true],['father_name','Father Name'],['mobile','Mobile'],['email','Email','email'],['course_id','Course ID'],['admission_date','Admission Date','date'],['status','Status','select',false,['Active','Inactive','Completed','Left']]],cols:['admission_no','full_name','father_name','mobile','status']},
  courses:{title:'Courses',table:'courses',fields:[['course_name','Course Name','text',true],['duration','Duration'],['fee_amount','Course Fee','number'],['description','Description','textarea']],cols:['course_name','duration','fee_amount']},
  fees:{title:'Fees',table:'fees',fields:[['student_name','Student Name','text',true],['admission_no','Admission No'],['amount','Amount','number',true],['payment_date','Payment Date','date'],['payment_mode','Payment Mode','select',['Cash','UPI','Bank Transfer','Other']],['receipt_no','Receipt No'],['remarks','Remarks','textarea']],cols:['student_name','admission_no','amount','payment_date','payment_mode','receipt_no']},
  attendance:{title:'Attendance',table:'attendance',fields:[['student_name','Student Name','text',true],['admission_no','Admission No'],['attendance_date','Date','date',true],['status','Status','select',['Present','Absent','Leave']],['remarks','Remarks']],cols:['student_name','admission_no','attendance_date','status']},
