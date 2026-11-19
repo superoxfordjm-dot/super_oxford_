@@ -23,8 +23,8 @@
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 // STEP: Replace these two placeholders with your Supabase Project URL and Publishable Key.
-const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_PROJECT_URL_HERE';
-const SUPABASE_PUBLISHABLE_KEY = 'PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE';
+const SUPABASE_URL = 'https://jlzidyrenpoprbhpvhns.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_rNvE3l3sQzgHd_x4RxjMFA_2DYleZ6l';
 const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
 const supabase = configured ? createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY) : null;
 const modules = {
